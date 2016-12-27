@@ -4,7 +4,9 @@
                  [reagent "0.6.0"]
                  [re-frame "0.9.1"]
                  [re-frisk "0.3.2"]
-                 [secretary "1.2.3"]]
+                 [secretary "1.2.3"]
+                 [cljs-ajax "0.5.8"]
+                 [cljsjs/jquery "2.2.4-0"]]
 
   :plugins [[lein-cljsbuild "1.1.4"]
             [lein-less "1.7.5"]]
