@@ -1,6 +1,6 @@
-(ns dizzy.pages.landing)
+(ns dizzy.pages.landing-1)
 
-(defn landing-page []
+(defn landing-page-1 []
   [:div#landing-wrap
     [:div.align-center
      [:img {:src "img/dizzy-logo.jpg"}]]

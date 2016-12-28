@@ -1,12 +1,12 @@
 (ns dizzy.views
     (:require [re-frame.core :as re-frame]
-              [dizzy.pages.landing :refer [landing-page]]))
+              [dizzy.pages.landing-1 :refer [landing-page-1]]))
 
 
 ;; home
 
 (defn home-panel []
-  [landing-page])
+  [landing-page-1])
 
 ;; about
 
