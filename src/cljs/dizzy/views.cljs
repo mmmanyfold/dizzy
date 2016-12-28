@@ -1,15 +1,12 @@
 (ns dizzy.views
-    (:require [re-frame.core :as re-frame]))
+    (:require [re-frame.core :as re-frame]
+              [dizzy.pages.landing :refer [landing-page]]))
 
 
 ;; home
 
 (defn home-panel []
-  (let [name (re-frame/subscribe [:name])]
-    (fn []
-      [:div (str "Hello from " @name ". This is the Home Page.")
-       [:div [:a {:href "#/about"} "go to About Page"]]])))
-
+  [landing-page])
 
 ;; about
 
