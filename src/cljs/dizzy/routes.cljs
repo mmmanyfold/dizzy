@@ -19,10 +19,10 @@
   ;; --------------------
   ;; define routes here
   (defroute "/" []
-    (re-frame/dispatch [:set-active-panel :home-panel]))
+    (re-frame/dispatch [:set-active-page :landing-page]))
 
-  (defroute "/about" []
-    (re-frame/dispatch [:set-active-panel :about-panel]))
+  (defroute "/feature" []
+    (re-frame/dispatch [:set-active-page :feature-page]))
 
 
   ;; --------------------
