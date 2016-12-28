@@ -1,33 +1,33 @@
 (ns dizzy.views
     (:require [re-frame.core :as re-frame]
-              [dizzy.pages.landing-1 :refer [landing-page-1]]))
+              [dizzy.pages.landing-01 :refer [landing-page-01]]
+              [dizzy.pages.feature-01 :refer [feature-page-01]]))
 
 
-;; home
+;; landing
 
-(defn home-panel []
-  [landing-page-1])
+(defn landing-page []
+  [:div
+    [landing-page-01]
+    [:a {:href "#/feature"} "go to feature"]])
 
-;; about
+;; feature
 
-(defn about-panel []
-  (fn []
-    [:div "This is the About Page."
-     [:div [:a {:href "#/"} "go to Home Page"]]]))
-
+(defn feature-page []
+  [feature-page-01])
 
 ;; main
 
-(defn- panels [panel-name]
-  (case panel-name
-    :home-panel [home-panel]
-    :about-panel [about-panel]
+(defn- pages [page-name]
+  (case page-name
+    :landing-page [landing-page]
+    :feature-page [feature-page]
     [:div]))
 
-(defn show-panel [panel-name]
-  [panels panel-name])
+(defn show-page [page-name]
+  [pages page-name])
 
-(defn main-panel []
-  (let [active-panel (re-frame/subscribe [:active-panel])]
+(defn main-page []
+  (let [active-page (re-frame/subscribe [:active-page])]
     (fn []
-      [show-panel @active-panel])))
+      [show-page @active-page])))

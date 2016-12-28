@@ -1,6 +1,30 @@
+html, body, #app { height: 100%; }
 body {
   color: black;
+  margin: 0;
 }
+
+// general use
+
+.align-center {
+  text-align: center;
+}
+
+map area {
+  outline: none;
+}
+
+.image-map-cover {
+  @media (orientation: landscape) {
+    height: 100%;
+  }
+  @media (orientation: portrait) {
+    width: 100%;
+  }
+}
+
+// page specific
+
 #landing-wrap {
   margin: 0 auto;
   margin-top: 1em;
@@ -60,15 +84,28 @@ body {
   }
   form {
     margin: 1em;
-    input {
+    .input-text {
       width: 11.5em;
       border: black solid 1px;
       font-size: 1em;
       text-align: center;
       line-height: 1.5em;
-      margin: 0.2em;}
+      margin: 0.2em;
+    }
+    .input-submit {
+      border: none;
+      background-color: white;
+      font-size: 0.9em;
+      font-family: 'arial', sans-serif;
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 }
-.align-center {
-  text-align: center;
+
+#feature-wrap {
+  width: 100%;
+  height: 100%;
+  background-color: #84898C;
 }

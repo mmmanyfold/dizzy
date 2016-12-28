@@ -1,12 +1,12 @@
-(ns dizzy.pages.landing-1)
+(ns dizzy.pages.landing-01)
 
-(defn landing-page-1 []
+(defn landing-page-01 []
   [:div#landing-wrap
     [:div.align-center
      [:img {:src "img/dizzy-logo.jpg"}]]
     [:div.content.flex-row
      [:div.flex-row-item
-      [:img {:src "img/dizzy-1.jpg"
+      [:img {:src "img/01/dizzy-1.jpg"
              :width "100%"}]]
      [:div.flex-row-item
       [:div.flex-col
@@ -19,7 +19,10 @@
         [:button "paypal placeholder"]]]]]
     [:div.unlock.align-center
      [:form {:action ""}
-      [:label "UNLOCK WEB FEATURE"]
+      [:input {:class "input-text"
+               :type "text"
+               :name "token"}]
       [:br]
-      [:input {:type "text"
-               :name "token"}]]]])
+      [:input {:class "input-submit"
+               :type "submit"
+               :value "UNLOCK WEB FEATURE"}]]]])
