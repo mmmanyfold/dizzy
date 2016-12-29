@@ -39,7 +39,10 @@
               :on-key-press #(when (and (= (.-charCode %) 13)
                                         (has-value? (-> % .-target .-value)))
                                (submit-action))
-              :on-change    #(reset! input-state (.toLowerCase (-> % .-target .-value)))}]
+              :on-change    #(reset! input-state (->
+                                                   (-> % .-target .-value)
+                                                   .toLowerCase
+                                                   .trim))}]
      [:br]
      [:button.submit
       {:on-click submit-action}
