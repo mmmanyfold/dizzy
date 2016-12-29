@@ -1,4 +1,4 @@
 (ns dizzy.db)
 
 (def default-db
-  {:name "re-frame"})
+  {:show-error-message false})

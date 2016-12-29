@@ -32,7 +32,11 @@
 
 (re-frame/reg-event-db
   :post-secret-token-fail
-  (fn [db [_ res]]
-    ;; TODO: show error here
-    (js/console.error res)
+  (fn [db [_ _]]
+    (re-frame/dispatch [:show-error-message! true])
     db))
+
+(re-frame/reg-event-db
+  :show-error-message!
+  (fn [db [_ show?]]
+    (assoc db :show-error-message show?)))
