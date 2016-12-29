@@ -1,5 +1,6 @@
 (ns dizzy.pages.landing-01
-  (:require [re-frame.core :as re-frame]))
+  (:require [re-frame.core :as re-frame]
+            [reagent.validation :refer [has-value?]]))
 
 (defonce input-state (atom nil))
 
@@ -8,6 +9,10 @@
 ;           (fn [_ _ old-state new-state]
 ;               (js/console.log "-- atom changed --")
 ;               (js/console.log new-state)))
+
+(defn submit-action []
+  (if (has-value? @input-state)
+    (re-frame/dispatch [:post-secret-token @input-state])))
 
 (defn landing-page-01 []
   [:div#landing-wrap
@@ -28,15 +33,14 @@
        [:button "paypal placeholder"]]]]]
    [:div.unlock.align-center
     [:div.form
-     [:input {:class     "input-text"
-              :type      "text"
-              :name      "token"
-              :on-change #(reset! input-state (-> % .-target .-value))}]
+     [:input {:class        "input-text"
+              :type         "text"
+              :name         "token"
+              :on-key-press #(when (and (= (.-charCode %) 13)
+                                        (has-value? (-> % .-target .-value)))
+                               (submit-action))
+              :on-change    #(reset! input-state (.toLowerCase (-> % .-target .-value)))}]
      [:br]
-     [:input {:class     "input-submit"
-              :type      "submit"
-              :value     "UNLOCK WEB FEATURE"
-              :on-submit (fn [e]
-                            (.preventDefault e)
-                            (re-frame/dispatch :post-secret-token @input-state)
-                            false)}]]]])
+     [:button.submit
+      {:on-click submit-action}
+      "UNLOCK WEB FEATURE"]]]])
