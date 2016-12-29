@@ -1,5 +1,6 @@
 (ns dizzy.pages.landing-01
-  (:require [re-frame.core :as re-frame]))
+  (:require [re-frame.core :as re-frame]
+            [reagent.validation :refer [has-value?]]))
 
 (defonce input-state (atom nil))
 
@@ -31,9 +32,10 @@
      [:input {:class     "input-text"
               :type      "text"
               :name      "token"
-              :on-change #(reset! input-state (-> % .-target .-value))}]
+              :on-change #(reset! input-state (.toLowerCase (-> % .-target .-value)))}]
      [:br]
-     [:input {:class        "input-submit"
-              :type         "button"
-              :value        "UNLOCK WEB FEATURE"
-              :on-click     #(re-frame/dispatch [:post-secret-token @input-state])}]]]])
+     [:input {:class    "input-submit"
+              :type     "button"
+              :value    "UNLOCK WEB FEATURE"
+              :on-click #(if (has-value? @input-state)
+                           (re-frame/dispatch [:post-secret-token @input-state]))}]]]])

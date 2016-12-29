@@ -5,7 +5,8 @@
                  [re-frame "0.9.1"]
                  [re-frisk "0.3.2"]
                  [secretary "1.2.3"]
-                 [cljs-ajax "0.5.8"]]
+                 [cljs-ajax "0.5.8"]
+                 [reagent-utils "0.2.0"]]
 
   :plugins [[lein-cljsbuild "1.1.4"]
             [lein-less "1.7.5"]]

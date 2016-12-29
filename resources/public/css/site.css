@@ -108,6 +108,7 @@ map area {
   background-color: white;
   font-size: 0.9em;
   font-family: 'arial', sans-serif;
+  border: 1px solid black;
 }
 #landing-wrap .form .input-submit:hover {
   cursor: pointer;
