@@ -27,7 +27,7 @@
        [:p "$15.00"]
        [:button "paypal placeholder"]]]]]
    [:div.unlock.align-center
-    [:form
+    [:div.form
      [:input {:class     "input-text"
               :type      "text"
               :name      "token"

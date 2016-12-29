@@ -92,10 +92,10 @@ map area {
   margin-bottom: 0;
   text-align: right;
 }
-#landing-wrap form {
+#landing-wrap .form {
   margin: 1em;
 }
-#landing-wrap form .input-text {
+#landing-wrap .form .input-text {
   width: 11.5em;
   border: black solid 1px;
   font-size: 1em;
@@ -103,13 +103,13 @@ map area {
   line-height: 1.5em;
   margin: 0.2em;
 }
-#landing-wrap form .input-submit {
+#landing-wrap .form .input-submit {
   border: none;
   background-color: white;
   font-size: 0.9em;
   font-family: 'arial', sans-serif;
 }
-#landing-wrap form .input-submit:hover {
+#landing-wrap .form .input-submit:hover {
   cursor: pointer;
 }
 #feature-wrap {
