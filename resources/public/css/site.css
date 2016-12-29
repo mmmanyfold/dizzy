@@ -103,14 +103,13 @@ map area {
   line-height: 1.5em;
   margin: 0.2em;
 }
-#landing-wrap .form .input-submit {
+#landing-wrap .form button.submit {
   border: none;
   background-color: white;
   font-size: 0.9em;
   font-family: 'arial', sans-serif;
-  border: 1px solid black;
 }
-#landing-wrap .form .input-submit:hover {
+#landing-wrap .form button.submit:hover {
   cursor: pointer;
 }
 #feature-wrap {

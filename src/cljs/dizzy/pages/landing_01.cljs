@@ -10,6 +10,10 @@
 ;               (js/console.log "-- atom changed --")
 ;               (js/console.log new-state)))
 
+(defn submit-action []
+  (if (has-value? @input-state)
+    (re-frame/dispatch [:post-secret-token @input-state])))
+
 (defn landing-page-01 []
   [:div#landing-wrap
    [:div.align-center
@@ -29,13 +33,14 @@
        [:button "paypal placeholder"]]]]]
    [:div.unlock.align-center
     [:div.form
-     [:input {:class     "input-text"
-              :type      "text"
-              :name      "token"
-              :on-change #(reset! input-state (.toLowerCase (-> % .-target .-value)))}]
+     [:input {:class        "input-text"
+              :type         "text"
+              :name         "token"
+              :on-key-press #(when (and (= (.-charCode %) 13)
+                                        (has-value? (-> % .-target .-value)))
+                               (submit-action))
+              :on-change    #(reset! input-state (.toLowerCase (-> % .-target .-value)))}]
      [:br]
-     [:input {:class    "input-submit"
-              :type     "button"
-              :value    "UNLOCK WEB FEATURE"
-              :on-click #(if (has-value? @input-state)
-                           (re-frame/dispatch [:post-secret-token @input-state]))}]]]])
+     [:button.submit
+      {:on-click submit-action}
+      "UNLOCK WEB FEATURE"]]]])

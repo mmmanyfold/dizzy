@@ -8,8 +8,7 @@
 
 (defn landing-page []
   [:div
-    [landing-page-01]
-    [:a {:href "#/feature"} "go to feature"]])
+    [landing-page-01]])
 
 ;; feature
 
