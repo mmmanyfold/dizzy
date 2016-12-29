@@ -1,6 +1,5 @@
 (ns dizzy.pages.feature-01
-  (:require [reagent.core :as reagent :refer [atom]]
-            [cljsjs.jquery]))
+  (:require [reagent.core :as reagent :refer [atom]]))
 
 (defonce og-img "../img/01/LC_BonusFeatures.jpg")
 (defonce hover1 "../img/01/LC_Hover1.jpg")
