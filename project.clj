@@ -7,6 +7,7 @@
                  [secretary "1.2.3"]
                  [cljs-ajax "0.5.8"]
                  [reagent-utils "0.2.0"]
+                 [org.clojure/core.async "0.2.385"]
                  [re-com "0.9.0"]]
 
   :plugins [[lein-cljsbuild "1.1.4"]
