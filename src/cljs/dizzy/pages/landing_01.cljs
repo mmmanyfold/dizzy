@@ -1,5 +1,6 @@
 (ns dizzy.pages.landing-01
   (:require [re-frame.core :as re-frame]
+            [re-com.core :refer [alert-box]]
             [reagent.validation :refer [has-value?]]))
 
 (defonce input-state (atom nil))
@@ -39,8 +40,18 @@
               :on-key-press #(when (and (= (.-charCode %) 13)
                                         (has-value? (-> % .-target .-value)))
                                (submit-action))
-              :on-change    #(reset! input-state (.toLowerCase (-> % .-target .-value)))}]
+              :on-change    #(reset! input-state (->
+                                                   (-> % .-target .-value)
+                                                   .toLowerCase
+                                                   .trim))}]
      [:br]
      [:button.submit
       {:on-click submit-action}
-      "UNLOCK WEB FEATURE"]]]])
+      "UNLOCK WEB FEATURE"]
+     [alert-box
+      :alert-type :danger
+      :style {:display (if @(re-frame/subscribe [:show-error-message?])
+                         "block"
+                         "none")}
+      :heading "oh snap!"
+      :body [:span "Wrong token."]]]]])
