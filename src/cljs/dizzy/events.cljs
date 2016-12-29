@@ -27,5 +27,12 @@
 (re-frame/reg-event-db
   :post-secret-token-success
   (fn [db [_ res]]
-    (js/console.log res)
+    (re-frame/dispatch [:set-active-page :feature-page])
+    db))
+
+(re-frame/reg-event-db
+  :post-secret-token-fail
+  (fn [db [_ res]]
+    ;; TODO: show error here
+    (js/console.error res)
     db))

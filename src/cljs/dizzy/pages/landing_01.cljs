@@ -33,10 +33,7 @@
               :name      "token"
               :on-change #(reset! input-state (-> % .-target .-value))}]
      [:br]
-     [:input {:class     "input-submit"
-              :type      "submit"
-              :value     "UNLOCK WEB FEATURE"
-              :on-submit (fn [e]
-                            (.preventDefault e)
-                            (re-frame/dispatch :post-secret-token @input-state)
-                            false)}]]]])
+     [:input {:class        "input-submit"
+              :type         "button"
+              :value        "UNLOCK WEB FEATURE"
+              :on-click     #(re-frame/dispatch [:post-secret-token @input-state])}]]]])
