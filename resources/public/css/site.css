@@ -56,8 +56,9 @@ map area {
     width: 40%;
   }
 }
-#landing-wrap h4 {
+#landing-wrap h5 {
   margin-top: 0;
+  font-weight: bold;
 }
 #landing-wrap .content {
   margin-top: 2em;
@@ -108,9 +109,11 @@ map area {
   background-color: white;
   font-size: 0.9em;
   font-family: 'arial', sans-serif;
+  outline: none;
 }
 #landing-wrap .form button.submit:hover {
   cursor: pointer;
+  color: red;
 }
 #feature-wrap {
   width: 100%;

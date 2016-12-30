@@ -1,6 +1,6 @@
 (ns dizzy.pages.landing-01
   (:require [re-frame.core :as re-frame]
-            [re-com.core :refer [alert-box]]
+            ; [re-com.core :refer [alert-box]]
             [reagent.validation :refer [has-value?]]))
 
 (defonce input-state (atom nil))
@@ -26,7 +26,7 @@
     [:div.flex-row-item
      [:div.flex-col
       [:div
-       [:h4 "DIZZY MAGAZINE ISSUE 1"]
+       [:h5 "DIZZY MAGAZINE ISSUE 1"]
        [:p "60 pages Full Color"
         [:br] "Featuring: Ellen Berkenblit, Jessica Butler, Livia Charman, Jos Demme, Kayla Ephros, Raque Ford, Patrick Morales, Princess Nokia, Reika Pia Soleimanpour, Diamond Stingly, Rirkrit Tiravanija, Haley Wollens, and Bernadette"]]
       [:div.pay
@@ -47,11 +47,11 @@
      [:br]
      [:button.submit
       {:on-click submit-action}
-      "UNLOCK WEB FEATURE"]
-     [alert-box
-      :alert-type :danger
-      :style {:display (if @(re-frame/subscribe [:show-error-message?])
-                         "block"
-                         "none")}
-      :heading "oh snap!"
-      :body [:span "Wrong token."]]]]])
+      "UNLOCK WEB FEATURE"]]]])
+    ;  [alert-box
+    ;   :alert-type :danger
+    ;   :style {:display (if @(re-frame/subscribe [:show-error-message?])
+    ;                      "block"
+    ;                      "none")}
+    ;   :heading "oh snap!"
+    ;   :body [:span "Wrong token."]]]]])
