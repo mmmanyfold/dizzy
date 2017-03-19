@@ -27,7 +27,7 @@
                 :onMouseOver #(reset! image-state hover1)
                 :onMouseOut #(reset! image-state og-img)}]
         [:area {:shape "poly"
-                :href "/livia-charman-interview"
+                :href "#/livia-charman-interview"
                 :target "_blank"
                 :coords "817,108,826,137,892,147,963,126,1007,141,1043,132,1115,166,1185,178,1206,151,1216,144,1248,180,1258,227,1247,274,1213,320,1156,350,1079,405,993,423,913,389,839,317,779,270,752,221,766,151"
                 :onMouseOver #(reset! image-state hover2)
