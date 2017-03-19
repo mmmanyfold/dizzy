@@ -58,7 +58,10 @@ map area {
 }
 #landing-wrap h5 {
   margin-top: 0;
-  font-weight: bold;
+  font-family: "arial black";
+}
+#landing-wrap p {
+  margin: 1.2em 0;
 }
 #landing-wrap .content {
   margin-top: 2em;
