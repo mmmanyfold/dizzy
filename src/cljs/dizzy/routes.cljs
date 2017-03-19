@@ -21,8 +21,11 @@
   (defroute "/" []
     (re-frame/dispatch [:set-active-page :landing-page]))
 
-  (defroute "/feature" []
-    (re-frame/dispatch [:set-active-page :feature-page]))
+  (defroute "/features" []
+    (re-frame/dispatch [:set-active-page :features-page]))
+
+  (defroute "/livia-charman-interview" []
+    (re-frame/dispatch [:set-active-page :interview-page]))
 
 
   ;; --------------------

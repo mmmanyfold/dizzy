@@ -21,22 +21,10 @@
            :keywords?       true
            :params          {:token token}
            :handler         #(re-frame/dispatch [:post-secret-token-success %])})
-          ;  :error-handler   #(re-frame/dispatch [:post-secret-token-fail %])})
     db))
 
 (re-frame/reg-event-db
   :post-secret-token-success
   (fn [db [_ res]]
-    (re-frame/dispatch [:set-active-page :feature-page])
+    (re-frame/dispatch [:set-active-page :features-page])
     db))
-
-; (re-frame/reg-event-db
-;   :post-secret-token-fail
-;   (fn [db [_ _]]
-;     (re-frame/dispatch [:show-error-message! true])
-;     db))
-;
-; (re-frame/reg-event-db
-;   :show-error-message!
-;   (fn [db [_ show?]]
-;     (assoc db :show-error-message show?)))

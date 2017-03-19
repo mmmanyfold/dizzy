@@ -1,26 +1,32 @@
 (ns dizzy.views
     (:require [re-frame.core :as re-frame]
-              [dizzy.pages.landing-01 :refer [landing-page-01]]
-              [dizzy.pages.feature-01 :refer [feature-page-01]]))
+              [dizzy.issue-01.home :refer [issue-01-home]]
+              [dizzy.issue-01.features :refer [issue-01-features]]
+              [dizzy.issue-01.interview :refer [issue-01-interview]]))
 
 
 ;; landing
 
 (defn landing-page []
-  [:div
-    [landing-page-01]])
+  [issue-01-home])
 
 ;; feature
 
-(defn feature-page []
-  [feature-page-01])
+(defn features-page []
+  [issue-01-features])
+
+;; interview
+
+(defn interview-page []
+  [issue-01-interview])
 
 ;; main
 
 (defn- pages [page-name]
   (case page-name
     :landing-page [landing-page]
-    :feature-page [feature-page]
+    :features-page [features-page]
+    :interview-page [interview-page]
     [:div]))
 
 (defn show-page [page-name]
